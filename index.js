@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 
 
-app.post('/webhook', (req, res)=>{
+app.get('/webhook', (req, res)=>{
     
     const response = req.body;
+
     console.log('Received Webhook payload');
-    console.log(response);
+    console.log(req);
     res.status(200).json({'success': {'message':'Webhook received', 'data':response} });
 })
 
